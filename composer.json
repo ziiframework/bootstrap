@@ -40,6 +40,12 @@
         "platform": {"php": "7.3"},
         "process-timeout": 1800
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "extra": {
         "branch-alias": {
             "dev-master": "4.0.x-dev"
