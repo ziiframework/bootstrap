@@ -18,23 +18,27 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require": {
-        "ziiframework/zii": "~3.1.1",
-        "bower-asset/bootstrap": "3.4.* | 3.3.* | 3.2.* | 3.1.*"
-    },
+    "require": {},
     "require-dev": {
+        "ziiframework/zii": ">=3.1.4",
         "phpunit/phpunit": "^8.5"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.cn"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "yii\\bootstrap\\": "src"
         }
+    },
+    "scripts": {
+        "redo-install": [
+            "rm -rf vendor/",
+            "rm -f composer.lock",
+            "@composer self-update -vvv",
+            "@composer install -vvv"
+        ]
+    },
+    "config": {
+        "platform": {"php": "7.3"},
+        "process-timeout": 1800
     },
     "extra": {
         "branch-alias": {
