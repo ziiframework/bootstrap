@@ -42,7 +42,7 @@ class Button extends Widget
      * Initializes the widget.
      * If you override this method, make sure you call the parent implementation first.
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         $this->clientOptions = false;

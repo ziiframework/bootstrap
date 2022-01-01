@@ -12,22 +12,45 @@
         {
             "name": "Yii Team",
             "email": "team@yiiframework.com",
-            "homepage": "http://www.yiiframework.com/team",
-            "role": "Founder and project lead"
+            "homepage": "https://www.yiiframework.com/team"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require": {},
+    "require": {
+        "php": ">=7.4.0",
+        "ziiframework/zii": ">=3.5.0",
+        "bower-asset/bootstrap": "^3.4.1"
+    },
     "require-dev": {
-        "ziiframework/zii": ">=3.1.4",
         "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {
-            "yii\\bootstrap\\": "src"
+            "yii\\bootstrap\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "yiiunit\\extensions\\bootstrap\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "ziiframework/composer": true,
+            "cweagans/composer-patches": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "scripts": {
         "redo-install": [
             "rm -rf vendor/",
@@ -35,10 +58,6 @@
             "@composer self-update -vvv",
             "@composer install -vvv"
         ]
-    },
-    "config": {
-        "platform": {"php": "7.3"},
-        "process-timeout": 1800
     },
     "extra": {
         "branch-alias": {

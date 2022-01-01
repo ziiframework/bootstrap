@@ -129,12 +129,18 @@ class Tabs extends Widget
      * @since 2.0.7
      */
     public $dropdownClass = 'yii\bootstrap\Dropdown';
+    /**
+     * @var string template for layout for the headers and the panes. Can be helpful, for example, if a left
+     * vertical tabs are required. Defaults to `{headers}{panes}`
+     * @since 2.0.11
+     */
+    public $template = '{headers}{panes}';
 
 
     /**
      * Initializes the widget.
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         Html::addCssClass($this->options, ['widget' => 'nav', $this->navType]);
@@ -220,7 +226,14 @@ class Tabs extends Widget
             $headers[] = Html::tag('li', $header, $headerOptions);
         }
 
-        return Html::tag('ul', implode("\n", $headers), $this->options) . $this->renderPanes($panes);
+        $headersHtml = Html::tag('ul', implode("\n", $headers), $this->options);
+        $panesHtml = $this->renderPanes($panes);
+
+        return strtr($this->template, [
+            '{headers}' => $headersHtml,
+            '{panes}' => $panesHtml,
+        ]);
+
     }
 
     /**

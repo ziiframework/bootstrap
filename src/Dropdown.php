@@ -69,7 +69,7 @@ class Dropdown extends Widget
      * Initializes the widget.
      * If you override this method, make sure you call the parent implementation first.
      */
-    public function init()
+    public function init(): void
     {
         if ($this->submenuOptions === null) {
             // copying of [[options]] kept for BC

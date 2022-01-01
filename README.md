@@ -1,1 +1,1 @@
-ziiframework/bootstrap (first commit: 66c41917b90f5d8b4c14c93fbc63b7363d9d235a)
+This repo is forked form [yiisoft/yii2-bootstrap](https://github.com/yiisoft/yii2-bootstrap.git).

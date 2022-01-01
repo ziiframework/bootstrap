@@ -115,7 +115,7 @@ class Collapse extends Widget
     /**
      * Initializes the widget.
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         Html::addCssClass($this->options, ['widget' => 'panel-group']);
