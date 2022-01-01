@@ -5,13 +5,13 @@ use yii\bootstrap\ActiveForm;
 
 /**
  * Tests for ActiveForm widget
- * 
+ *
  * @group bootstrap
  */
 class ActiveFormTest extends TestCase
 {
 
-    protected function setUp()
+    protected function setUp(): void
     {
         // dirty way to have Request object not throwing exception when running testFormNoRoleAttribute()
         $_SERVER['REQUEST_URI'] = "index.php";
