@@ -42,7 +42,8 @@
         },
         "sort-packages": true,
         "allow-plugins": {
-            "ziiframework/composer": true
+            "ziiframework/composer": true,
+            "cweagans/composer-patches": true
         }
     },
     "repositories": [
