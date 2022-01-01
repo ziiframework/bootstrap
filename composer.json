@@ -18,6 +18,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
+        "php": ">=7.4.0",
         "ziiframework/zii": ">=3.5.0",
         "bower-asset/bootstrap": "3.4.* | 3.3.* | 3.2.* | 3.1.*"
     },
@@ -25,12 +26,6 @@
         "cweagans/composer-patches": "^1.7",
         "phpunit/phpunit": "^4.8"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "yii\\bootstrap\\": "src/"
@@ -40,6 +35,29 @@
         "psr-4": {
             "yiiunit\\extensions\\bootstrap\\": "tests/"
         }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "ziiframework/composer": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "scripts": {
+        "redo-install": [
+            "rm -rf vendor/",
+            "rm -f composer.lock",
+            "@composer self-update -vvv",
+            "@composer install -vvv"
+        ]
     },
     "extra": {
         "branch-alias": {
