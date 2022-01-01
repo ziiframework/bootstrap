@@ -115,7 +115,7 @@ class Nav extends Widget
     /**
      * Initializes the widget.
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         if ($this->route === null && Yii::$app->controller !== null) {

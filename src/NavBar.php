@@ -102,7 +102,7 @@ class NavBar extends Widget
     /**
      * Initializes the widget.
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         $this->clientOptions = false;

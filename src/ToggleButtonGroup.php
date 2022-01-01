@@ -54,7 +54,7 @@ class ToggleButtonGroup extends InputWidget
     /**
      * {@inheritdoc}
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         $this->registerPlugin('button');
@@ -79,9 +79,9 @@ class ToggleButtonGroup extends InputWidget
                 }
             case 'radio':
                 if ($this->hasModel()) {
-                    return Html::activeRadioList($this->model, $this->attribute, $this->items, $this->options); 
+                    return Html::activeRadioList($this->model, $this->attribute, $this->items, $this->options);
                 } else {
-                    return Html::radioList($this->name, $this->value, $this->items, $this->options); 
+                    return Html::radioList($this->name, $this->value, $this->items, $this->options);
                 }
             default:
                 throw new InvalidConfigException("Unsupported type '{$this->type}'");
